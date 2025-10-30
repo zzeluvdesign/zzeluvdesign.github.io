@@ -193,3 +193,308 @@ svg:hover path {
 
 </body>
 </html>
+
+<style>
+  * {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  background: white;
+  overflow: hidden;
+}
+
+/* 배경 이미지 */
+.background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('https://i.imgur.com/Uzzkgaf.png') no-repeat center bottom;
+  background-size: cover;
+  z-index: 0;
+}
+
+/* 공통 박스 */
+.box {
+  position: fixed;
+  width: 120px;
+  height: auto;
+  pointer-events: none;
+  transition: left 0.3s ease;
+  z-index: calc(var(--i, 0) + 1);
+}
+
+.box img {
+  width: 100%;
+  height: auto;
+  display: block;
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
+#div10 {
+  width: 100px;
+  height: auto;
+}
+
+#div8 {
+  width: 100px;
+  height: auto;
+}
+
+/* 각 박스에 bottom 위치 지정 */
+#div1  { left: 5%;  --i:2;  bottom: 35px; }
+#div2  { left: 10%; --i:1;  bottom: 45px; }
+#div3  { left: 20%; --i:5;  bottom: 35px; }
+
+#div4  { left: 30%; --i:3;  bottom: 55px; }
+#div5  { left: 50%; --i:12;  bottom: 45px; }
+#div6  { left: 35%; --i:4;  bottom: 35px; }
+
+#div7  { left: 60%; --i:6;  bottom: 50px; }
+#div8  { left: 65%; --i:8;  bottom: 30px; }
+#div9  { left: 70%; --i:7;  bottom: 55px; }
+
+#div10 { left: 80%; --i:10;  bottom: 45px; }
+#div11 { left: 84%; --i:9; bottom: 35px; }
+#div12 { left: 45%; --i:11; bottom: 45px; }
+
+.box {
+  position: fixed;
+  width: 120px;
+  height: auto;
+  pointer-events: none; /* 기본적으로 클릭 불가 */
+  transition: left 0.3s ease;
+  z-index: calc(var(--i, 0) + 1);
+}
+
+/* div5만 호버 가능 */
+#div5 {
+  left: 50%;
+  --i: 12;
+  bottom: 45px;
+  pointer-events: auto; /* 클릭 가능 */
+  cursor: pointer;
+}
+
+
+#div5 img {
+  transition: 0.1s ease;
+}
+
+@media (min-width: 1300px) {
+  #div5:hover img {
+    content: url('https://i.imgur.com/6ZP9kin.png'); /* 호버 이미지 */
+    height: 400px;
+    width: auto;
+    transform: translateX(-40px); /* 왼쪽으로 20px 이동 */
+    transition: 0.5s ease;
+  }
+}
+
+@media (min-width: 1000px) and (max-width: 1300px) {
+  #div5 img {
+    content: url('https://i.imgur.com/DN2VfhW.png'); /* 기본 이미지 */
+    height: 400px;
+    width: auto;
+  }
+
+  #div5:hover img {
+    content: url('https://i.imgur.com/wC71O1m.png'); /* 호버 이미지 */
+    height: 400px;
+    width: auto;
+  }
+}
+
+@media (min-width: 600px) and (max-width: 1000px) {
+  #div1 img {
+    content: url('https://i.imgur.com/ej1Nh0a.png');
+    height: 410px;
+    width: auto;
+  }
+  #div2 img {
+    content: url('https://i.imgur.com/PdoXCmw.png');
+    height: 438px;
+    width: auto;
+  }
+  #div3 img {
+    content: url('https://i.imgur.com/eMEVsmX.png');
+    height: 383px;
+    width: auto;
+  }
+  #div4 img {
+    content: url('https://i.imgur.com/MkkkRTr.png');
+    height: 348px;
+    width: auto;
+  }
+  #div6 img {
+    content: url('https://i.imgur.com/Wjd8wD9.png');
+    height: 341px;
+    width: auto;
+  }
+  #div5 img {
+    content: url('https://i.imgur.com/qbbuNyO.png');
+    height: 400px;
+    width: auto;
+  }
+   #div7 img {
+    content: url('https://i.imgur.com/NUj78NJ.png');
+    height: 394px;
+    width: auto;
+  }
+  #div8 img {
+    content: url('https://i.imgur.com/IHG9oYS.png');
+    height: 309px;
+    width: auto;
+  }
+  #div9 img {
+    content: url('https://i.imgur.com/ph6jG4n.png');
+    height: 394px;
+    width: auto;
+  }
+  #div10 img {
+    content: url('https://i.imgur.com/cy8ZLYT.png');
+    height: 293px;
+    width: auto;
+  }
+  #div11 img {
+    content: url('https://i.imgur.com/Ra3ywlX.png');
+    height: 397px;
+    width: auto;
+  }
+  #div12 img {
+    content: url('https://i.imgur.com/HcYMC3Y.png');
+    height: 143px;
+    width: auto;
+  }
+  #div5:hover img {
+    content: url('https://i.imgur.com/ZsYSuP8.png'); /* 호버 이미지 */
+    height: 400px;
+    width: auto;
+  }
+}
+
+@media (min-width: 350px) and (max-width: 600px) {
+  #div1 img {
+    content: url('https://i.imgur.com/b95nBvL.png');
+    height: 410px;
+    width: auto;
+  }
+  #div2 img {
+    content: url('https://i.imgur.com/vAzvkgF.png');
+    height: 438px;
+    width: auto;
+  }
+  #div3 img {
+    content: url('https://i.imgur.com/mFkzXlK.png');
+    height: 383px;
+    width: auto;
+  }
+  #div4 img {
+    content: url('https://i.imgur.com/1D7UEcF.png');
+    height: 348px;
+    width: auto;
+  }
+  #div5 img {
+    content: url('https://i.imgur.com/BjBAzPV.png');
+    height: 400px;
+    width: auto;
+  }
+  #div6 img {
+    content: url('https://i.imgur.com/TqDvVBy.png');
+    height: 341px;
+    width: auto;
+  }
+   #div7 img {
+    content: url('https://i.imgur.com/9po78X9.png');
+    height: 394px;
+    width: auto;
+  }
+  #div8 img {
+    content: url('https://i.imgur.com/Fq7bPDw.png');
+    height: 309px;
+    width: auto;
+  }
+  #div9 img {
+    content: url('https://i.imgur.com/jrPzwLw.png');
+    height: 394px;
+    width: auto;
+  }
+  #div10 img {
+    content: url('https://i.imgur.com/IIIfp6i.png');
+    height: 293px;
+    width: auto;
+  }
+  #div11 img {
+    content: url('https://i.imgur.com/epEYU9G.png');
+    height: 397px;
+    width: auto;
+  }
+  #div12 img {
+    content: url('https://i.imgur.com/yNDxTZL.png');
+    height: 143px;
+    width: auto;
+  }
+  #div5:hover img {
+    content: url('https://i.imgur.com/tvdT69a.png'); /* 호버 이미지 */
+    height: 400px;
+    width: auto;
+  }
+}
+
+@media (max-width: 350px) {
+  html, body {
+    background: #ff3000 !important;
+    overflow: hidden;
+  }
+
+  .background,
+  .box,
+  svg {
+    display: none !important;
+  }
+
+ body::after {
+    content: "";
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: 300px;
+    height: 300px;
+    background: url('https://i.imgur.com/kRscWxM.png') no-repeat center/contain;
+    transform: translate(-50%, -50%);
+    z-index: 999;
+    animation: blink 0.5s infinite alternate;
+  }
+
+  @keyframes blink {
+    0% { opacity: 1; }
+    100% { opacity: 0; }
+  }
+}
+</style>
+<script>
+  const btn = document.getElementById("musicBtn");
+const icon = document.getElementById("musicIcon");
+const audio = document.getElementById("bgm");
+let isPlaying = false;
+
+btn.addEventListener("click", () => {
+  if (!isPlaying) {
+    audio.play();
+    btn.classList.add("playing");
+    icon.innerHTML = '<rect x="6" y="5" width="4" height="14"></rect><rect x="14" y="5" width="4" height="14"></rect>'; // ⏸ pause
+  } else {
+    audio.pause();
+    btn.classList.remove("playing");
+    icon.innerHTML = '<path d="M8 5v14l11-7z"/>'; // ▶️ play
+  }
+  isPlaying = !isPlaying;
+});
+</script>
